@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/45 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title> IT003.K21.ATCL - Problem BST_p46 - WeCode Judge</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/assets/images/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/default.min.css">
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/all.css">
+	
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/sb-admin.css">
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/main.css">
+	
+	
+<style media="screen">
+.wecode_table td{
+	text-align: left;
+}
+
+</style>
+<style></style><style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
+	font-weight: bold;
+	padding: 8px 15px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	white-space: nowrap;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+.notifyjs-bootstrap-error {
+	color: #B94A48;
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-success {
+	color: #468847;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+}
+.notifyjs-bootstrap-info {
+	color: #3A87AD;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-warn {
+	color: #C09853;
+	background-color: #FCF8E3;
+	border-color: #FBEED5;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+}
+</style><style>.cke{visibility:hidden;}</style><style type="text/css" id="core-notify">.notifyjs-corner {
+	position: fixed;
+	margin: 5px;
+	z-index: 1050;
+}
+
+.notifyjs-corner .notifyjs-wrapper,
+.notifyjs-corner .notifyjs-container {
+	position: relative;
+	display: block;
+	height: inherit;
+	width: inherit;
+	margin: 3px;
+}
+
+.notifyjs-wrapper {
+	z-index: 1;
+	position: absolute;
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
+
+.notifyjs-container {
+	display: none;
+	z-index: 1;
+	position: absolute;
+}
+
+.notifyjs-hidable {
+	cursor: pointer;
+}
+
+[data-notify-text],[data-notify-html] {
+	position: relative;
+}
+
+.notifyjs-arrow {
+	position: absolute;
+	z-index: 2;
+	width: 0;
+	height: 0;
+}</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+
+<body id="body" class="fixed-nav "><div id="MathJax_Message" style="">File failed to load: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/jax/output/CommonHTML/jax.js</div>
+<nav id="mainNav" class="mainNav navbar navbar-expand-lg navbar-dark fixed-top color-problems bg-dark">
+	<a class="navbar-brand" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/">
+		<img src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/logo.png" height="30px">
+		IT003.K21.ATCL
+	</a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  	<ul class="navbar-nav bg-dark navbar-sidenav color-problems" id="exampleAccordion">
+		  	<li class="nav-item color-dashboard">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/dashboard">
+					<i class="fa fa-fw fa-tachometer-alt fa-lg"></i>
+					<span class="nav-link-text">Dashboard</span>
+				</a>
+		  	</li>
+			<li class="nav-item color-notifications">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/notifications">
+					<i class="fa fa-fw fa-bell fa-lg"></i>
+					<span class="nav-link-text">Notifications</span>
+				</a>
+			</li>
+						<li class="nav-item color-assignments">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/assignments">
+					<i class="fa fa-fw fa-folder-open fa-lg"></i>
+					<span class="nav-link-text">Assignments</span>
+				</a>
+			</li>
+			<li class="nav-item color-problems">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem">
+					<i class="fa fa-fw fa-puzzle-piece fa-lg"></i>
+					<span class="nav-link-text">Problems</span>
+				</a>
+			</li>
+			<li class="nav-item color-submit">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submit">
+					<i class="fas fa-fw fa-code fa-lg"></i>
+					<span class="nav-link-text">Code Editor</span>
+				</a>
+			</li>
+			<li class="nav-item color-all_submissions">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submissions/">
+					<i class="fa fa-fw fa-bars fa-lg"></i>
+					<span class="nav-link-text">Submissions</span>
+				</a>
+			</li>
+			<li class="nav-item color-scoreboard">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/scoreboard">
+					<i class="fa fa-fw fa-star fa-lg"></i>
+					<span class="nav-link-text">Scoreboard</span>
+				</a>
+			</li>
+
+			<div class="p-1 sidenav-bottom nav-item mt-auto">
+				<span>
+					<a href="https://github.com/truongan/wecode-judge" target="_blank">© Wecode Judge 1.4</a>
+					<a href="https://github.com/truongan/wecode-judge/tree/docs" target="_blank">Docs</a>
+				</span><br>
+				<small><span class="timer text-light">Server time: 09/07 - 15:19:14</span></small>
+			</div>
+	  	</ul>
+
+		<ul class="navbar-nav sidenav-toggler bg-primary">
+			<li class="nav-item">
+				<a class="nav-link text-center" id="sidenavToggler">
+				<i class="fa fa-fw fa-fw fa-angle-left"></i>
+				</a>
+			</li>
+		</ul>
+
+		<div class="navbar-nav ml-auto p-3">
+			<div class="top_object shj-spinner d-none">
+				<i class="fa fa-fw fa-refresh fa-spin fa-lg"></i>
+			</div>
+		</div>
+
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/assignments">All assignments</a>
+			</li>
+			
+		</ul>
+
+
+		<div class="navbar-nav">
+			<div class="top_object countdown d-flex flex-column justify-content-center" id="countdown">
+				<div class="time_block">
+					<span id="time_days" class="countdown_num">0☀️21:40:45</span>
+				</div>
+			</div>
+			<div class="top_object countdown" id="extra_time" style="display: block;">
+				<i class="fa fa-fw fa-plus-square fa-2x"></i>
+				<div class="time_block">
+					<span>Extra Time</span>
+				</div>
+			</div>
+		</div>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item dropdown">
+				<a class="dropdown-toggle nav-link" data-toggle="dropdown" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/45#" id="profile_link"><i class="fa fa-fw fa-user"></i></a>
+								<div class="dropdown-menu dropdown-menu-right logout-menu">
+					<div class="d-flex pr-3 pl-3">
+						<div class="mr-3">
+							<div class="gravatar"><img src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/8282d3d1e2f05907971f3100cf5adb67"></div>
+						</div>
+						<div class="">
+							<div class="name h4"><i class="fa fa-fw fa-user"></i> 19521317</div>
+							<div class="d-inline-flex">
+								<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/logout" class="btn btn-danger mr-2 text-nowrap"><i class="fas fa-fw fa-sign-out-alt"></i> Signout</a>
+								<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/profile" class="btn btn-info text-nowrap"><i class="fas fa-fw fa-wrench"></i> Profile</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="content-wrapper"><div class="container-fluid">
+		<div class="row">
+		<div id="page_title" class="jumbotron jumbontron-fluid py-3 mb-0 col-12 align-items-center d-flex">
+			<i class="fas fa-puzzle-piece fa-fw fa-lg"></i>
+			<span>BST_p46</span>
+			
+
+
+
+		</div>
+	</div>
+
+	<div id="main_content" class="row">
+		
+	<div class="col-md-7 col-lg-8 col-sm-12">
+
+		<div class="problem_description" id="problem_description">
+			<p><strong>Problem:</strong>.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cây tìm kiếm ứng với <strong><em>N</em></strong> khóa&nbsp;k<sub>1</sub>, k<sub>2</sub>, k<sub>3</sub>, … là cây nhị phân&nbsp;mà mỗi nút đều được gán một khóa sao cho với mỗi mỗi nút <strong><em>k</em></strong>:</p>
+
+<ul>
+	<li>Mọi khóa trên cây con trái đều nhỏ hơn khóa trên nút <strong><em>k</em></strong>.</li>
+	<li>Mọi khóa trên cây con phải đều lớn hơn khóa trên nút <strong><em>k</em></strong>.&nbsp;<img alt="" border="0" hspace="0" src="data:image/png;base64,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" style="border:0px solid black; height:368px; margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:0px; width:556px" vspace="0"></li>
+</ul>
+
+<p>Hãy xây dựng một cây Binary Search Tree <strong>chỉ chứa các phần tử phân biệt</strong> (không tồn tại hai giá trị giống nhau).&nbsp;</p>
+
+<p><strong><u>Nhiệm vụ</u></strong>: Đếm số Node bậc 1 của cây.</p>
+
+<p><strong><u>Dữ liệu vào: </u></strong></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Dòng đầu tiên là số lượng Node N&nbsp;của cây. (n <span class="math-tex"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax_Error" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo&gt;&amp;#x2260;&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><span aria-hidden="true">[Math Processing Error]</span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≠</mo></math></span></span><script type="math/tex" id="MathJax-Element-1">\ne</script></span>&nbsp;0)</p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- N&nbsp;dòng tiếp theo là giá trị của&nbsp;N&nbsp;Node, Node sẽ được thêm vào cây thêm thứ tự từ trên xuống dưới.</p>
+
+<p><strong><u>Dữ liệu ra: </u></strong></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- In ra số node bậc 1 của cây.</p>
+
+<p><strong><u>Ví dụ:</u></strong></p>
+
+<table border="1" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>Input&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></p>
+			</td>
+			<td>
+			<p><strong>Output</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>8<br>
+			7 13 11 1 6 12 51 5</p>
+			</td>
+			<td>So node bac 1 cua cay la: 3<br>
+			&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+		</div>
+	</div>
+
+	<div class="col-md-5 col-lg-4 ">
+						<div class="problems_widget row">
+			<p><i class="fa fa-file-text fa-lg color9"></i> Assignment-11</p>
+			<p class="text-muted"><span class="badge badge-secondary count_problems">8</span> problems with a total score of <span class="badge badge-secondary sum_score">900</span></p>
+			<table class="wecode_table table  table-bordered">
+				<thead>
+				<tr>
+										<th>#</th>
+					<th>Problem</th>
+					<th>Score</th>
+									</tr>
+				</thead>
+													<tbody><tr class="  ">
+												<td>1</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/48">BST_p49</a>
+						</td>
+						<td class=""><span>200</span></td>
+					</tr>
+													<tr class="  ">
+												<td>2</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/47">BST_p48</a>
+						</td>
+						<td class="text-light bg-success"><span>100</span></td>
+					</tr>
+													<tr class="  ">
+												<td>3</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/46">BST_p47</a>
+						</td>
+						<td class="text-light bg-success"><span>100</span></td>
+					</tr>
+													<tr class="  table-active  ">
+												<td>4</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/45">BST_p46</a>
+						</td>
+						<td class="text-light bg-success"><span>100</span></td>
+					</tr>
+													<tr class="  ">
+												<td>5</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/44">BST_p45</a>
+						</td>
+						<td class="text-light bg-success"><span>100</span></td>
+					</tr>
+													<tr class="  ">
+												<td>6</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/43">BST_p44</a>
+						</td>
+						<td class="text-light bg-success"><span>100</span></td>
+					</tr>
+													<tr class="  ">
+												<td>7</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/41">BST_p42</a>
+						</td>
+						<td class="text-light bg-success"><span>100</span></td>
+					</tr>
+													<tr class="  ">
+												<td>8</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/12/40">BST_p41</a>
+						</td>
+						<td class="text-light bg-success"><span>100</span></td>
+					</tr>
+							</tbody></table>
+		</div>
+		
+
+				<div class="problems_widget ">
+
+			<span><i class="fa fa-upload fa-lg color11"></i> Submit</span>
+			
+			<form action="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submit/" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<input type="hidden" name="wcj_csrf_name" value="f7db72272c12cfef5a72fe61e1017304" dir="auto">                                                                                                                       
+
+
+							<input type="hidden" name="assignment" value="12" dir="auto">
+						<input type="hidden" name="problem" value="45" dir="auto">
+			<fieldset class="form-group form-row">
+				<label>
+					Select language
+				</label>
+
+				<select id="languages" name="language" class="form-control custom-select">
+
+											<option value="2">C++</option>
+									</select>
+			</fieldset>
+
+			<fieldset class="form-group form-row">
+				<div class="col-12 custom-file">
+					<input type="file" id="file" class=" custom-file-input" name="userfile" dir="auto">
+					<label class="custom-file-label text-muted"><small>upload source code</small></label>
+				</div>
+			</fieldset>
+
+			<fieldset class="form-group form-row">
+				<input type="submit" value="Submit" class="form-control" dir="auto">
+			</fieldset>
+			</form>
+
+		</div>
+		<div class="problems_widget row">
+			<span class=""><a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submit/editor/45/12" target="_blank"><i class="fa fa-pencil-square-o"></i> Code editor</a></span>
+		</div>
+		
+	</div>
+	</div>
+
+</div></div>
+
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/jquery-3.3.1.min.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/popper.min.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/bootstrap.min.js.tải xuống"></script>
+
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/moment.min.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/jquery.cookie.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/sb-admin.min.js.tải xuống"></script>
+
+<script src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/notify.min.js.tải xuống"></script>
+
+<script type="text/javascript">
+shj={};
+shj.site_url = 'https\u003A\/\/khmt.uit.edu.vn\/laptrinh\/it003.k21.atcl/';
+shj.base_url = 'https\u003A\/\/khmt.uit.edu.vn\/laptrinh\/it003.k21.atcl/';
+shj.csrf_token = $.cookie('csrf_cookie');
+shj.offset = moment('2020-07-09 15:19:13').diff(moment());
+shj.time = moment();
+shj.finish_time = moment("2020-07-08 13:00:00");
+shj.extra_time = moment.duration(172800, 'seconds');
+shj.color_scheme = 'github';
+</script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/shj_functions.js.tải xuống"></script>
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async="" src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/MathJax.js.tải xuống">
+</script>
+<script src="./IT003.K21.ATCL - Problem BST_p46 - WeCode Judge_files/ckeditor.js.tải xuống" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	shj.setup_save('.save-button'
+	, 'https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/problems/edit_description/45'
+	, CKEDITOR.instances.problem_description);
+
+});
+</script>
+
+
+</body></html>

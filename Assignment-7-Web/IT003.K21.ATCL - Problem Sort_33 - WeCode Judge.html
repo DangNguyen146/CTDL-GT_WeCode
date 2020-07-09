@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/7/31 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title> IT003.K21.ATCL - Problem Sort_33 - WeCode Judge</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/assets/images/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/default.min.css">
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/all.css">
+	
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/sb-admin.css">
+	<link rel="stylesheet" type="text/css" href="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/main.css">
+	
+	
+<style media="screen">
+.wecode_table td{
+	text-align: left;
+}
+
+</style>
+<style></style><style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
+	font-weight: bold;
+	padding: 8px 15px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	white-space: nowrap;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+.notifyjs-bootstrap-error {
+	color: #B94A48;
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-success {
+	color: #468847;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+}
+.notifyjs-bootstrap-info {
+	color: #3A87AD;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-warn {
+	color: #C09853;
+	background-color: #FCF8E3;
+	border-color: #FBEED5;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+}
+</style><style>.cke{visibility:hidden;}</style><style type="text/css" id="core-notify">.notifyjs-corner {
+	position: fixed;
+	margin: 5px;
+	z-index: 1050;
+}
+
+.notifyjs-corner .notifyjs-wrapper,
+.notifyjs-corner .notifyjs-container {
+	position: relative;
+	display: block;
+	height: inherit;
+	width: inherit;
+	margin: 3px;
+}
+
+.notifyjs-wrapper {
+	z-index: 1;
+	position: absolute;
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
+
+.notifyjs-container {
+	display: none;
+	z-index: 1;
+	position: absolute;
+}
+
+.notifyjs-hidable {
+	cursor: pointer;
+}
+
+[data-notify-text],[data-notify-html] {
+	position: relative;
+}
+
+.notifyjs-arrow {
+	position: absolute;
+	z-index: 2;
+	width: 0;
+	height: 0;
+}</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+
+<body id="body" class="fixed-nav "><div id="MathJax_Message" style="display: none;"></div>
+<nav id="mainNav" class="mainNav navbar navbar-expand-lg navbar-dark fixed-top color-problems bg-dark">
+	<a class="navbar-brand" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/">
+		<img src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/logo.png" height="30px">
+		IT003.K21.ATCL
+	</a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  	<ul class="navbar-nav bg-dark navbar-sidenav color-problems" id="exampleAccordion">
+		  	<li class="nav-item color-dashboard">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/dashboard">
+					<i class="fa fa-fw fa-tachometer-alt fa-lg"></i>
+					<span class="nav-link-text">Dashboard</span>
+				</a>
+		  	</li>
+			<li class="nav-item color-notifications">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/notifications">
+					<i class="fa fa-fw fa-bell fa-lg"></i>
+					<span class="nav-link-text">Notifications</span>
+				</a>
+			</li>
+						<li class="nav-item color-assignments">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/assignments">
+					<i class="fa fa-fw fa-folder-open fa-lg"></i>
+					<span class="nav-link-text">Assignments</span>
+				</a>
+			</li>
+			<li class="nav-item color-problems">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem">
+					<i class="fa fa-fw fa-puzzle-piece fa-lg"></i>
+					<span class="nav-link-text">Problems</span>
+				</a>
+			</li>
+			<li class="nav-item color-submit">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submit">
+					<i class="fas fa-fw fa-code fa-lg"></i>
+					<span class="nav-link-text">Code Editor</span>
+				</a>
+			</li>
+			<li class="nav-item color-all_submissions">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submissions/">
+					<i class="fa fa-fw fa-bars fa-lg"></i>
+					<span class="nav-link-text">Submissions</span>
+				</a>
+			</li>
+			<li class="nav-item color-scoreboard">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/scoreboard">
+					<i class="fa fa-fw fa-star fa-lg"></i>
+					<span class="nav-link-text">Scoreboard</span>
+				</a>
+			</li>
+
+			<div class="p-1 sidenav-bottom nav-item mt-auto">
+				<span>
+					<a href="https://github.com/truongan/wecode-judge" target="_blank">© Wecode Judge 1.4</a>
+					<a href="https://github.com/truongan/wecode-judge/tree/docs" target="_blank">Docs</a>
+				</span><br>
+				<small><span class="timer text-light">Server time: 09/07 - 15:18:03</span></small>
+			</div>
+	  	</ul>
+
+		<ul class="navbar-nav sidenav-toggler bg-primary">
+			<li class="nav-item">
+				<a class="nav-link text-center" id="sidenavToggler">
+				<i class="fa fa-fw fa-fw fa-angle-left"></i>
+				</a>
+			</li>
+		</ul>
+
+		<div class="navbar-nav ml-auto p-3">
+			<div class="top_object shj-spinner d-none">
+				<i class="fa fa-fw fa-refresh fa-spin fa-lg"></i>
+			</div>
+		</div>
+
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/assignments">All assignments</a>
+			</li>
+			
+		</ul>
+
+
+		<div class="navbar-nav">
+			<div class="top_object countdown d-flex flex-column justify-content-center" id="countdown">
+				<div class="time_block">
+					<span id="time_days" class="countdown_num">0☀️21:41:56</span>
+				</div>
+			</div>
+			<div class="top_object countdown" id="extra_time" style="display: block;">
+				<i class="fa fa-fw fa-plus-square fa-2x"></i>
+				<div class="time_block">
+					<span>Extra Time</span>
+				</div>
+			</div>
+		</div>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item dropdown">
+				<a class="dropdown-toggle nav-link" data-toggle="dropdown" href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/7/31#" id="profile_link"><i class="fa fa-fw fa-user"></i></a>
+								<div class="dropdown-menu dropdown-menu-right logout-menu">
+					<div class="d-flex pr-3 pl-3">
+						<div class="mr-3">
+							<div class="gravatar"><img src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/8282d3d1e2f05907971f3100cf5adb67"></div>
+						</div>
+						<div class="">
+							<div class="name h4"><i class="fa fa-fw fa-user"></i> 19521317</div>
+							<div class="d-inline-flex">
+								<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/logout" class="btn btn-danger mr-2 text-nowrap"><i class="fas fa-fw fa-sign-out-alt"></i> Signout</a>
+								<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/profile" class="btn btn-info text-nowrap"><i class="fas fa-fw fa-wrench"></i> Profile</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="content-wrapper"><div class="container-fluid">
+		<div class="row">
+		<div id="page_title" class="jumbotron jumbontron-fluid py-3 mb-0 col-12 align-items-center d-flex">
+			<i class="fas fa-puzzle-piece fa-fw fa-lg"></i>
+			<span>Sort_33</span>
+			
+
+	<span class="title_menu_item"><a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/template/31/7"><i class="fa fa-download color1"></i> Download the code template</a></span>
+
+
+		</div>
+	</div>
+
+	<div id="main_content" class="row">
+		
+	<div class="col-md-7 col-lg-8 col-sm-12">
+
+		<div class="problem_description" id="problem_description">
+			<p><strong><u><span style="color:black">Problem 33</span></u></strong><span style="color:black">: Viết chương trình sắp xếp mảng số nguyên dùng giải thuật chèn trực tiếp (Insertion Sort). Cho chuỗi số nguyên&nbsp;<strong>a</strong>&nbsp;với&nbsp;<strong>n</strong>&nbsp;phần tử. dùng giải thuật chèn trực tiếp để sắp xếp mảng&nbsp;<strong>a</strong>&nbsp;them thứ tự giảm dần.</span></p>
+
+<p style="text-align:justify"><strong><span style="color:black">Input:</span></strong></p>
+
+<p style="text-align:justify"><strong><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -</span></strong><span style="color:black">Nhập số nguyên&nbsp;<strong>n</strong>&nbsp;&nbsp;là số phần tử của mảng số nguyên&nbsp;<strong>a</strong>.</span></p>
+
+<p style="text-align:justify"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Lần lượt nhập các phần tử của mảng&nbsp;<strong>a.</strong></span></p>
+
+<p style="text-align:justify"><strong><span style="color:black">Output:</span></strong></p>
+
+<p style="text-align:justify"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Xuất mảng sau khi đã sắp xếp giảm dẫn và các bước thực hiện như ví dụ sau:</span></p>
+
+<p><strong><span style="color:black">Ví dụ:</span></strong></p>
+
+<table border="1" cellspacing="0" style="width:446.3pt">
+	<tbody>
+		<tr>
+			<td style="vertical-align:top; width:77.7pt">
+			<p>Input</p>
+			</td>
+			<td style="vertical-align:top; width:368.6pt">
+			<p>Output</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top; width:77.7pt">
+			<p>0</p>
+			</td>
+			<td style="vertical-align:top; width:368.6pt">
+			<p>Mang rong.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top; width:77.7pt">
+			<p>5</p>
+
+			<p>1</p>
+
+			<p>2</p>
+
+			<p>3</p>
+
+			<p>4</p>
+
+			<p>5</p>
+			</td>
+			<td style="vertical-align:top; width:368.6pt">
+			<p>Mang truoc khi sap xep la: 1 2 3 4 5</p>
+
+			<p>Vi tri chen cua a[1] la 0</p>
+
+			<p>2 1 3 4 5</p>
+
+			<p>Vi tri chen cua a[2] la 0</p>
+
+			<p>3 2 1 4 5</p>
+
+			<p>Vi tri chen cua a[3] la 0</p>
+
+			<p>4 3 2 1 5</p>
+
+			<p>Vi tri chen cua a[4] la 0</p>
+
+			<p>5 4 3 2 1</p>
+
+			<p>Mang sau khi sap xep la: 5 4 3 2 1</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+		</div>
+	</div>
+
+	<div class="col-md-5 col-lg-4 ">
+						<div class="problems_widget row">
+			<p><i class="fa fa-file-text fa-lg color9"></i> Assignment-7</p>
+			<p class="text-muted"><span class="badge badge-secondary count_problems">4</span> problems with a total score of <span class="badge badge-secondary sum_score">80</span></p>
+			<table class="wecode_table table  table-bordered">
+				<thead>
+				<tr>
+										<th>#</th>
+					<th>Problem</th>
+					<th>Score</th>
+									</tr>
+				</thead>
+													<tbody><tr class="  ">
+												<td>1</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/7/29">Search_p30</a>
+						</td>
+						<td class="text-light bg-success"><span>20</span></td>
+					</tr>
+													<tr class="  ">
+												<td>2</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/7/32">Search_p31</a>
+						</td>
+						<td class="text-light bg-success"><span>20</span></td>
+					</tr>
+													<tr class="  ">
+												<td>3</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/7/30">Sort_32</a>
+						</td>
+						<td class="text-light bg-success"><span>20</span></td>
+					</tr>
+													<tr class="  table-active  ">
+												<td>4</td>
+						<td>
+							<a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/view_problem/7/31">Sort_33</a>
+						</td>
+						<td class="text-light bg-success"><span>20</span></td>
+					</tr>
+							</tbody></table>
+		</div>
+		
+
+				<div class="problems_widget ">
+
+			<span><i class="fa fa-upload fa-lg color11"></i> Submit</span>
+			
+			<form action="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submit/" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<input type="hidden" name="wcj_csrf_name" value="f7db72272c12cfef5a72fe61e1017304" dir="auto">                               
+
+
+							<input type="hidden" name="assignment" value="7" dir="auto">
+						<input type="hidden" name="problem" value="31" dir="auto">
+			<fieldset class="form-group form-row">
+				<label>
+					Select language
+				</label>
+
+				<select id="languages" name="language" class="form-control custom-select">
+
+											<option value="2">C++</option>
+									</select>
+			</fieldset>
+
+			<fieldset class="form-group form-row">
+				<div class="col-12 custom-file">
+					<input type="file" id="file" class=" custom-file-input" name="userfile" dir="auto">
+					<label class="custom-file-label text-muted"><small>upload source code</small></label>
+				</div>
+			</fieldset>
+
+			<fieldset class="form-group form-row">
+				<input type="submit" value="Submit" class="form-control" dir="auto">
+			</fieldset>
+			</form>
+
+		</div>
+		<div class="problems_widget row">
+			<span class=""><a href="https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/submit/editor/31/7" target="_blank"><i class="fa fa-pencil-square-o"></i> Code editor</a></span>
+		</div>
+		
+	</div>
+	</div>
+
+</div></div>
+
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/jquery-3.3.1.min.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/popper.min.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/bootstrap.min.js.tải xuống"></script>
+
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/moment.min.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/jquery.cookie.js.tải xuống"></script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/sb-admin.min.js.tải xuống"></script>
+
+<script src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/notify.min.js.tải xuống"></script>
+
+<script type="text/javascript">
+shj={};
+shj.site_url = 'https\u003A\/\/khmt.uit.edu.vn\/laptrinh\/it003.k21.atcl/';
+shj.base_url = 'https\u003A\/\/khmt.uit.edu.vn\/laptrinh\/it003.k21.atcl/';
+shj.csrf_token = $.cookie('csrf_cookie');
+shj.offset = moment('2020-07-09 15:18:02').diff(moment());
+shj.time = moment();
+shj.finish_time = moment("2020-07-08 13:00:00");
+shj.extra_time = moment.duration(172800, 'seconds');
+shj.color_scheme = 'github';
+</script>
+<script type="text/javascript" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/shj_functions.js.tải xuống"></script>
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async="" src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/MathJax.js.tải xuống">
+</script>
+<script src="./IT003.K21.ATCL - Problem Sort_33 - WeCode Judge_files/ckeditor.js.tải xuống" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	shj.setup_save('.save-button'
+	, 'https://khmt.uit.edu.vn/laptrinh/it003.k21.atcl/problems/edit_description/31'
+	, CKEDITOR.instances.problem_description);
+
+});
+</script>
+
+
+</body></html>
