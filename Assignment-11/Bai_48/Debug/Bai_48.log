@@ -1,0 +1,3 @@
+﻿  Source.cpp
+F:\CTDL&GT\Assignment-11\Bai_48\Source.cpp(7,2): warning C4091: 'typedef ': ignored on left of 'TNode' when no variable is declared
+  Bai_48.vcxproj -> F:\CTDL&GT\Assignment-11\Debug\Bai_48.exe

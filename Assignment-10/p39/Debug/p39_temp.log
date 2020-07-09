@@ -1,0 +1,4 @@
+﻿D:\DwnlData\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (p39_temp.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Source.cpp
+F:\CTDL&GT\Assignment-10\p39_temp\Source.cpp(22,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  p39_temp.vcxproj -> F:\CTDL&GT\Assignment-10\Debug\p39.exe
